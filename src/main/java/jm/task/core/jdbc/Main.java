@@ -1,30 +1,46 @@
 package jm.task.core.jdbc;
 
-import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
-import jm.task.core.jdbc.service.UserService;
-import jm.task.core.jdbc.service.UserServiceImpl;
+import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
 
 import java.sql.SQLException;
 
 public class Main {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
         // реализуйте алгоритм здесь
 
-        UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
-        userDaoJDBC.createUsersTable();
+          ///////////////   JDBC
+//
+//        UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
+//        userDaoJDBC.createUsersTable();
+//
+//        userDaoJDBC.saveUser("Vitaliy", "Usoltsev", (byte) 20);
+//        userDaoJDBC.saveUser("Evgeniy", "Usoltsev", (byte) 31);
+//        userDaoJDBC.saveUser("Irina", "Pamorzina", (byte) 21);
+//        userDaoJDBC.saveUser("Alexandr", "Feredyk", (byte) 42);
+//
+//        userDaoJDBC.getAllUsers();
+//
+//        userDaoJDBC.removeUserById(3);
+//
+//        userDaoJDBC.cleanUsersTable();
+//
+//        userDaoJDBC.dropUsersTable();
 
-        userDaoJDBC.saveUser("Vitaliy", "Usoltsev", (byte) 20);
-        userDaoJDBC.saveUser("Evgeniy", "Usoltsev", (byte) 31);
-        userDaoJDBC.saveUser("Irina", "Pamorzina", (byte) 21);
-        userDaoJDBC.saveUser("Alexandr", "Feredyk", (byte) 42);
+          ///////////////   Hibernate
 
-        userDaoJDBC.getAllUsers();
+        UserDaoHibernateImpl userDaoHibernate = new UserDaoHibernateImpl();
+        userDaoHibernate.createUsersTable();
+        userDaoHibernate.saveUser("Vitaliy", "Usoltsev", (byte) 20);
+        userDaoHibernate.saveUser("Evgeniy", "Usoltsev", (byte) 31);
 
-        userDaoJDBC.removeUserById(3);
+        userDaoHibernate.removeUserById(1);
 
-        userDaoJDBC.cleanUsersTable();
+        userDaoHibernate.removeUserById(7);
 
-        userDaoJDBC.dropUsersTable();
+        userDaoHibernate.getAllUsers();
 
+        userDaoHibernate.cleanUsersTable();
+
+        userDaoHibernate.dropUsersTable();
     }
 }
