@@ -8,6 +8,7 @@
 <!--    <property name="connection.driver_class"/>-->
 <!--     <property name="connection.username"/>-->
 <!--     <property name="connection.password"/>-->
+<!--    <property name="hibernate.connection.autocommit">false</property>-->
 
 
 

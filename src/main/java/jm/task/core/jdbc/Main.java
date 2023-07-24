@@ -2,13 +2,11 @@ package jm.task.core.jdbc;
 
 import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
 
-import java.sql.SQLException;
-
 public class Main {
     public static void main(String[] args) {
         // реализуйте алгоритм здесь
 
-          ///////////////   JDBC
+        ///////////////   JDBC
 //
 //        UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
 //        userDaoJDBC.createUsersTable();
@@ -26,16 +24,17 @@ public class Main {
 //
 //        userDaoJDBC.dropUsersTable();
 
-          ///////////////   Hibernate
+        ///////////////   Hibernate
 
         UserDaoHibernateImpl userDaoHibernate = new UserDaoHibernateImpl();
         userDaoHibernate.createUsersTable();
+
         userDaoHibernate.saveUser("Vitaliy", "Usoltsev", (byte) 20);
         userDaoHibernate.saveUser("Evgeniy", "Usoltsev", (byte) 31);
+        userDaoHibernate.saveUser("Irina", "Pamorzina", (byte) 21);
+        userDaoHibernate.saveUser("Alexandr", "Feredyk", (byte) 42);
 
-        userDaoHibernate.removeUserById(1);
-
-        userDaoHibernate.removeUserById(7);
+        userDaoHibernate.removeUserById(4);
 
         userDaoHibernate.getAllUsers();
 
